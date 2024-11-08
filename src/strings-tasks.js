@@ -498,7 +498,9 @@ function encodeToRot13(str) {
 function getCardId(value) {
   const suits = '♣♦♥♠';
   const ranks = 'A234567891JQK';
-  return 
+  return (
+    suits.indexOf(value.slice(-1)) * 13 + ranks.indexOf(value.slice(0, -1))
+  );
 }
 
 module.exports = {
